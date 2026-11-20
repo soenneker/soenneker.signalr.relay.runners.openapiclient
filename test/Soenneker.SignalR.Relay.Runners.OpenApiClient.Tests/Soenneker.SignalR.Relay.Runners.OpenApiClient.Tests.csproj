@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Cloudflare.SignalR.Runners.OpenApiClient\Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.SignalR.Relay.Runners.OpenApiClient\Soenneker.SignalR.Relay.Runners.OpenApiClient.csproj" />
     </ItemGroup>
 
 </Project>

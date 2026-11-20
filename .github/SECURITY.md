@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability, **do not create a public GitHub issue or discussion.**
 
-Instead, report it privately using this repository�s [GitHub private vulnerability reporting tool](https://github.com/soenneker/soenneker.cloudflare.signalr.runners.openapiclient/security/advisories/new).
+Instead, report it privately using this repository�s [GitHub private vulnerability reporting tool](https://github.com/soenneker/soenneker.signalr.relay.runners.openapiclient/security/advisories/new).
 
 When reporting, include as much detail as possible to help us triage effectively:
 - A description of the vulnerability and its context

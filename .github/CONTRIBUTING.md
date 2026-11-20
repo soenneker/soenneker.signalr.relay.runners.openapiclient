@@ -1,11 +1,11 @@
-# Contributing to Soenneker.Cloudflare.SignalR.Runners.OpenApiClient
+# Contributing to Soenneker.SignalR.Relay.Runners.OpenApiClient
 
 We're excited that you're interested in contributing!
 
 ## How to Contribute
 
 1. **Create an Issue**
-   - If you have a new feature idea, a bug report, or any other improvement suggestion, start by creating an issue on the [Issues](https://github.com/soenneker/soenneker.cloudflare.signalr.runners.openapiclient/issues) page.
+   - If you have a new feature idea, a bug report, or any other improvement suggestion, start by creating an issue on the [Issues](https://github.com/soenneker/soenneker.signalr.relay.runners.openapiclient/issues) page.
    - Clearly describe the problem or enhancement you're proposing and provide as much detail as possible.
 
 1. **Fork the Repository**
@@ -29,7 +29,7 @@ We're excited that you're interested in contributing!
    - Push your changes to your forked repository on GitHub.
 
 1. **Create a Pull Request**
-   - Go to the [Pull Requests](https://github.com/soenneker/soenneker.cloudflare.signalr.runners.openapiclient/pulls) page of the original repository.
+   - Go to the [Pull Requests](https://github.com/soenneker/soenneker.signalr.relay.runners.openapiclient/pulls) page of the original repository.
    - Click on "New Pull Request."
    - Select your forked repository and the branch with your changes.
    - Provide a clear title and description. Include the link of the original issue.

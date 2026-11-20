@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "Soenneker.Cloudflare.SignalR.Runners.OpenApiClient": {
+    "Soenneker.SignalR.Relay.Runners.OpenApiClient": {
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Local"

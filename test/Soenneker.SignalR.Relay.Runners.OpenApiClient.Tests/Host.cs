@@ -5,7 +5,7 @@ using Serilog;
 using Soenneker.TestHosts.Unit;
 using Soenneker.Utils.Test;
 
-namespace Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.Tests;
+namespace Soenneker.SignalR.Relay.Runners.OpenApiClient.Tests;
 
 public sealed class Host : UnitTestHost
 {

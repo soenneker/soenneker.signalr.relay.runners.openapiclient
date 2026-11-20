@@ -23,20 +23,20 @@ jobs:
           dotnet-version: 11.0.100
       - uses: actions/checkout@v7
         with:
-          repository: soenneker/soenneker.cloudflare.signalr.openapi
+          repository: soenneker/soenneker.signalr.relay.openapi
           path: spec
           persist-credentials: false
       - uses: actions/checkout@v7
         with:
-          repository: soenneker/soenneker.cloudflare.signalr.openapiclient
+          repository: soenneker/soenneker.signalr.relay.openapiclient
           ref: main
           path: client
           token: ${{ secrets.GH__TOKEN }}
       - run: dotnet tool restore
       - name: Generate client
-        run: dotnet run --project src/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient -c Release -- spec/openapi.json client
+        run: dotnet run --project src/Soenneker.SignalR.Relay.Runners.OpenApiClient -c Release -- spec/openapi.json client
       - name: Test generated client
-        run: dotnet test --project client/test/Soenneker.Cloudflare.SignalR.OpenApiClient.Tests -c Release
+        run: dotnet test --project client/test/Soenneker.SignalR.Relay.OpenApiClient.Tests -c Release
       - name: Publish changed client
         working-directory: client
         run: |

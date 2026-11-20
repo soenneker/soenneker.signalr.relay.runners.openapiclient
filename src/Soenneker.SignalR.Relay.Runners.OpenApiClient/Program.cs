@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
-const string library = "Soenneker.Cloudflare.SignalR.OpenApiClient";
+const string library = "Soenneker.SignalR.Relay.OpenApiClient";
 if (args.Length != 2) throw new ArgumentException("Supply openapi.json and the generated client repository directory.");
 var document = Path.GetFullPath(args[0]);
 var project = Path.Combine(Path.GetFullPath(args[1]), "src", library);
@@ -14,7 +14,7 @@ File.Copy(document, Path.Combine(project, "openapi.json"), overwrite: true);
 var start = new ProcessStartInfo("dotnet") { UseShellExecute = false };
 foreach (string argument in new[] { "tool", "run", "kiota", "--", "generate", "--language", "CSharp",
     "--openapi", Path.Combine(project, "openapi.json"), "--namespace-name", library,
-    "--class-name", "CloudflareSignalROpenApiClient", "--output", Path.Combine(project, "Generated"),
+    "--class-name", "SignalRRelayOpenApiClient", "--output", Path.Combine(project, "Generated"),
     "--exclude-backward-compatible", "--clean-output" })
     start.ArgumentList.Add(argument);
 using var generator = Process.Start(start) ?? throw new InvalidOperationException("Unable to start Kiota.");

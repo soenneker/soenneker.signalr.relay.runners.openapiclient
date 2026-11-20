@@ -35,13 +35,13 @@ jobs:
           dotnet-version: 11.0.100
 
       - name: Restore tests
-        run: dotnet restore test/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.Tests/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.Tests.csproj --verbosity minimal
+        run: dotnet restore test/Soenneker.SignalR.Relay.Runners.OpenApiClient.Tests/Soenneker.SignalR.Relay.Runners.OpenApiClient.Tests.csproj --verbosity minimal
 
       - name: Build tests
-        run: dotnet build test/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.Tests/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.Tests.csproj --configuration Release --no-restore --verbosity minimal
+        run: dotnet build test/Soenneker.SignalR.Relay.Runners.OpenApiClient.Tests/Soenneker.SignalR.Relay.Runners.OpenApiClient.Tests.csproj --configuration Release --no-restore --verbosity minimal
 
       - name: Test
-        run: dotnet test --project test/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.Tests/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
+        run: dotnet test --project test/Soenneker.SignalR.Relay.Runners.OpenApiClient.Tests/Soenneker.SignalR.Relay.Runners.OpenApiClient.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
 
       - name: Pack
-        run: dotnet pack src/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient.csproj --configuration Release --no-build --no-restore --output . --verbosity minimal
+        run: dotnet pack src/Soenneker.SignalR.Relay.Runners.OpenApiClient/Soenneker.SignalR.Relay.Runners.OpenApiClient.csproj --configuration Release --no-build --no-restore --output . --verbosity minimal
