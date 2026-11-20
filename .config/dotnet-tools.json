@@ -2,6 +2,6 @@
   "version": 1,
   "isRoot": true,
   "tools": {
-    "microsoft.openapi.kiota": { "version": "1.38.0", "commands": ["kiota"] }
+    "microsoft.openapi.kiota": { "version": "1.39.0", "commands": ["kiota"] }
   }
 }
