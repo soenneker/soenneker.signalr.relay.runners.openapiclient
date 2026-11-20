@@ -1,0 +1,48 @@
+name: daily-automatic-update
+on:
+  schedule:
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-signalr-client
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 11.0.100
+      - uses: actions/checkout@v7
+        with:
+          repository: soenneker/soenneker.cloudflare.signalr.openapi
+          path: spec
+          persist-credentials: false
+      - uses: actions/checkout@v7
+        with:
+          repository: soenneker/soenneker.cloudflare.signalr.openapiclient
+          ref: main
+          path: client
+          token: ${{ secrets.GH__TOKEN }}
+      - run: dotnet tool restore
+      - name: Generate client
+        run: dotnet run --project src/Soenneker.Cloudflare.SignalR.Runners.OpenApiClient -c Release -- spec/openapi.json client
+      - name: Test generated client
+        run: dotnet test --project client/test/Soenneker.Cloudflare.SignalR.OpenApiClient.Tests -c Release
+      - name: Publish changed client
+        working-directory: client
+        run: |
+          git add src
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name soenneker
+          git config user.email 4441470+soenneker@users.noreply.github.com
+          git commit -m "Regenerate SignalR management client"
+          git push origin HEAD:main
